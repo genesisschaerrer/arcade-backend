@@ -1,7 +1,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors") 
-const bcrypt = require("bcrypt")
+// const bcrypt = require("bcrypt")
 require("dotenv").config()
   
 
@@ -16,13 +16,11 @@ db.once("open", () => console.log("CONNECTED TO DATABASE"))
 app.use(express.json()) 
 app.use(cors())
 
-// app.get("/", (req, res) => {
-//     res.send("We are home")
-// })
-
 const gameRoutes = require("./routes/game-routes")
+const adminRoutes = require("./routes/admin-routes")
 
 app.use("/", gameRoutes)
+app.use("/", adminRoutes)
 
 
 app.listen(port, () => console.log("LISTENING ON PORT: ", port))
