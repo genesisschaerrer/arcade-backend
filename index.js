@@ -16,9 +16,13 @@ db.once("open", () => console.log("CONNECTED TO DATABASE"))
 app.use(express.json()) 
 app.use(cors())
 
-app.get("/", (req, res) => {
-    res.send("We are home")
-})
+// app.get("/", (req, res) => {
+//     res.send("We are home")
+// })
+
+const gameRoutes = require("./routes/game-routes")
+
+app.use("/", gameRoutes)
 
 
 app.listen(port, () => console.log("LISTENING ON PORT: ", port))
