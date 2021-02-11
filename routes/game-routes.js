@@ -1,10 +1,11 @@
 const express = require("express")
 const router = express.Router()
 
-const Game = require("../models/game")
+const Game = require("../models/game") 
+const verify = require("../verify")
 
 //get all games
-router.get("/", async (req, res) => {
+router.get("/", verify, async (req, res) => {
     try {
         const game = await Game.find()
         res.status(200).json(game)

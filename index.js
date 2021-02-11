@@ -2,6 +2,7 @@ const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors") 
 // const bcrypt = require("bcrypt")
+const cookieParser = require("cookie-parser")
 require("dotenv").config()
   
 
@@ -15,6 +16,7 @@ db.once("open", () => console.log("CONNECTED TO DATABASE"))
 
 app.use(express.json()) 
 app.use(cors())
+app.use(cookieParser())
 
 const gameRoutes = require("./routes/game-routes")
 const adminRoutes = require("./routes/admin-routes")
