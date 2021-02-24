@@ -16,9 +16,9 @@ db.once("open", () => console.log("CONNECTED TO DATABASE"))
 
 app.use(express.json()) 
 app.use(cors({
-    origin: ["https://arcade-client.herokuapp.com", "http://localhost:3000"],
-    allowedHeaders: ["Access-Control-Allow-Origin", "Content-Type", "Cookies", "token"],
-    AccessControlAllowOrigin: ["https://arcade-client.herokuapp.com", "http://localhost:3000"],
+    origin: ["https://arcade-client.herokuapp.com", "http://localhost:3000", "https://nostalgic-brattain-51b8a7.netlify.app/"],
+    allowedHeaders: ["Access-Control-Allow-Origin", "Content-Type", "Cookies"],
+    AccessControlAllowOrigin: ["https://arcade-client.herokuapp.com", "http://localhost:3000", "https://nostalgic-brattain-51b8a7.netlify.app/"],
     credentials: true
 }))
 app.use(cookieParser())
