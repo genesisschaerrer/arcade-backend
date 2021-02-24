@@ -17,8 +17,9 @@ db.once("open", () => console.log("CONNECTED TO DATABASE"))
 app.use(express.json()) 
 app.use(cors({
     origin: ["http://localhost:3000"],
-    allowedHeaders: ["Access-Control-Allow-Origin", "Content-Type", "Cookies"],
-    AccessControlAllowOrigin: ["http://localhost:3000"]
+    allowedHeaders: ["Access-Control-Allow-Origin", "Content-Type", "Cookies", "token"],
+    // AccessControlAllowOrigin: ["http://localhost:3000"],
+    credentials: true
 }))
 app.use(cookieParser())
 
