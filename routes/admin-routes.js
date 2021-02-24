@@ -38,7 +38,7 @@ router.post("/login", async (req, res) => {
     }
 
     const token = jwt.sign({_id: admin._id}, process.env.TOKEN_SECRET)
-    res.status(200).cookie("token", token).send(token)
+    res.status(200).cookie("token", token, {sameSite: "none", secure: true}).send(token)
 }) 
 
 //Log Out
