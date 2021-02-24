@@ -11,7 +11,8 @@ const gameSchema = new Schema({
         require: true
     },
     image: {
-        type: String
+        type: String,
+        require: true
     },
     creator: {
         type: String
@@ -19,3 +20,10 @@ const gameSchema = new Schema({
 })
 
 module.exports = mongoose.model("game", gameSchema)
+
+    // image: {
+    //     type: Buffer
+    // },
+    // coverImageType: {
+    //     type: String
+    // },

@@ -5,7 +5,7 @@ const Game = require("../models/game")
 const verify = require("../verify")
 
 //get all games
-router.get("/", verify, async (req, res) => {
+router.get("/", async (req, res) => {
     try {
         const game = await Game.find()
         res.status(200).json(game)
@@ -20,8 +20,12 @@ router.post("/", async (req, res) => {
         name: req.body.name,
         url: req.body.url,
         image: req.body.image,
+        // image: new Buffer.from(req.body.image, 'base64'),
         creator: req.body.creator
     })
+
+    // saveImage(game, req.body.image)
+
     try{
         const newGame = await game.save()
         res.status(200).json({newGame})
@@ -55,5 +59,13 @@ router.delete("/delete/:id", async (req, res) => {
         }
     })
 })
+
+// function saveImage(book, imageEncoded){
+//     if(imageEncoded == null) return
+//     const image = JSON.parse(imageEncoded)
+//     console.log(image)
+//     game.image = new Buffer.from(cover.data, 'base64')
+    
+// }
 
 module.exports = router

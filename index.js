@@ -15,7 +15,11 @@ db.on("error: ",  (error) => console.error(error))
 db.once("open", () => console.log("CONNECTED TO DATABASE")) 
 
 app.use(express.json()) 
-app.use(cors())
+app.use(cors({
+    origin: ["http://localhost:3000"],
+    allowedHeaders: ["Access-Control-Allow-Origin", "Content-Type", "Cookies"],
+    AccessControlAllowOrigin: ["http://localhost:3000"]
+}))
 app.use(cookieParser())
 
 const gameRoutes = require("./routes/game-routes")
