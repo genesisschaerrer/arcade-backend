@@ -18,7 +18,7 @@ app.use(express.json())
 app.use(cors({
     origin: ["https://arcade-client.herokuapp.com", "http://localhost:3000"],
     allowedHeaders: ["Access-Control-Allow-Origin", "Content-Type", "Cookies", "token"],
-    // AccessControlAllowOrigin: ["http://localhost:3000"],
+    AccessControlAllowOrigin: ["https://arcade-client.herokuapp.com", "http://localhost:3000"],
     credentials: true
 }))
 app.use(cookieParser())
