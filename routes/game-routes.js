@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 })
 
 //post 
-router.post("/", verify, async (req, res) => {
+router.post("/", async (req, res) => {
     const game = new Game({
         name: req.body.name,
         url: req.body.url,
@@ -49,7 +49,7 @@ router.get("/:id", async (req, res) => {
 })
 
 //delete 
-router.delete("/delete/:id", verify, async (req, res) => {
+router.delete("/delete/:id", async (req, res) => {
     const id = req.params.id
     await Game.findByIdAndRemove(id, function(err, docs){
     if(err){
