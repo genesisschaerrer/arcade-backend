@@ -28,7 +28,7 @@ router.post("/", async (req, res) => {
 
     try{
         const newGame = await game.save()
-        res.setHeader('Access-Control-Allow-Origin', '*')
+        res.setHeader('Access-Control-Allow-Origin', 'https://arcade-client.herokuapp.com/admindashboard')
         res.status(200).json({newGame})
     } catch (error) {
         res.status(400).json({message: error.message})
