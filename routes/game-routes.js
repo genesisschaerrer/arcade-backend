@@ -4,6 +4,7 @@ const router = express.Router()
 const Game = require("../models/game") 
 const verify = require("../verify")
 
+
 //get all games
 router.get("/", async (req, res) => {
     try {
